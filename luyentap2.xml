@@ -1,0 +1,10 @@
+<suite name="TestNG" verbose="1">
+
+    <test name="LuyenTap2">
+        <classes>
+            <class name="LuyenTap2.testcases.UserAccessTest">
+            </class>
+        </classes>
+    </test>
+</suite>
+

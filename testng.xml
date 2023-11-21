@@ -1,0 +1,10 @@
+<suite name="TestNG" verbose="1">
+
+    <test name="nhutester">
+        <classes>
+            <class name="nhutester.testcases.UserAccessTest">
+            </class>
+        </classes>
+    </test>
+</suite>
+

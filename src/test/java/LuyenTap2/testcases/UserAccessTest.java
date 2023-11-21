@@ -26,17 +26,16 @@ public class UserAccessTest {
 
     @Test(priority = 2)
     public void Test_Task() throws InterruptedException {
-        PageActions.TaskPage(driver, "Bug màn A", "Không thể login", "20-11-2023", "21-11-2023");
+        PageActions.TaskPage(driver, "Bug nè", "Không thể login", "22-11-2023", "23-11-2023");
     }
 
     @Test(priority = 3)
     public void Test_List() throws InterruptedException {
-        //Thread.sleep(1000);
-        PageActions.ListPage(driver, "Bug màn A", "comment 1", "comment 2" );
+        PageActions.ListPage(driver, "Bug nè", "comment 1", "comment 2" );
     }
 
-//    @AfterTest
-//    public void afterTest() {
-//        driver.quit();
-//    }
+    @AfterTest
+    public void afterTest() {
+        driver.quit();
+    }
 }

@@ -1,69 +1,52 @@
 package LuyenTap2.pageObject;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 public class ListPage {
-    private static WebElement element = null;
+    private static WebElement element;
 
-    //Search
-    public static WebElement search(WebDriver driver) throws NoSuchElementException {
-        element = driver.findElement(By.xpath("//label//input[@type='search']"));
-        return element;
+    public static WebElement Category(WebDriver driver) {
+        return driver.findElement(By.xpath("//button[text()='Bug']"));
+    }
+    public static WebElement search(WebDriver driver) {
+        return driver.findElement(By.xpath("//input[@type='search']"));
     }
 
-    //Click detail task
-    public static WebElement detail(WebDriver driver) throws NoSuchElementException {
-        element = driver.findElement(By.xpath("(//td//a[contains(@title, 'Task info')])[1]"));
-        return element;
+    public static WebElement detail(WebDriver driver) {
+        return driver.findElement(By.xpath("(//td//a[contains(@title, 'Task info')])[1]"));
     }
 
-
-    //Nhập cmt 1
-    public static WebElement cmt1(WebDriver driver) throws NoSuchElementException {
-        element = driver.findElement(By.xpath("//textarea[@id='comment_description']"));
-        return element;
+    public static WebElement cmt1(WebDriver driver) {
+        return driver.findElement(By.xpath("//textarea[@id='comment_description']"));
     }
 
-    public static WebElement submit_cmt1(WebDriver driver) throws NoSuchElementException {
-        element = driver.findElement(By.xpath("//button[text()=' Post Comment']"));
-        return element;
+    public static WebElement submit_cmt1(WebDriver driver) {
+        return driver.findElement(By.xpath("//button[text()=' Post Comment']"));
     }
 
-    //Nhập cmt 2
-    public static WebElement cmt2(WebDriver driver) throws NoSuchElementException {
-        element = driver.findElement(By.xpath("//textarea[@id='comment_description']"));
-        return element;
+    public static WebElement cmt2(WebDriver driver) {
+        return driver.findElement(By.xpath("//textarea[@id='comment_description']"));
     }
 
-    public static WebElement submit_cmt2(WebDriver driver) throws NoSuchElementException {
-        element = driver.findElement(By.xpath("//button[text()=' Post Comment']"));
-        return element;
+    public static WebElement submit_cmt2(WebDriver driver) {
+        return driver.findElement(By.xpath("//button[text()=' Post Comment']"));
     }
 
-    //Edit status
-    public static WebElement edit_status(WebDriver driver) throws NoSuchElementException {
-        element = driver.findElement(By.xpath("//a[text()=' Edit task']"));
-        return element;
+    public static WebElement edit_status(WebDriver driver) {
+        return driver.findElement(By.xpath("//a[text()=' Edit task']"));
     }
 
-    // Click dropdown Status
-    public static WebElement click_Status(WebDriver driver) throws NoSuchElementException{
-        element = driver.findElement(By.xpath("//label[text()='Status']/following::div[@id='s2id_task_status_id']"));
-        return element;
+    public static WebElement click_Status(WebDriver driver) {
+        return driver.findElement(By.xpath("//label[text()='Status']/following::div[@id='s2id_task_status_id']"));
     }
 
-    // Chọn option Status
-    public static WebElement select_Status(WebDriver driver) throws NoSuchElementException{
-        element = driver.findElement(By.xpath("//div[text()='In progress']"));
-        return element;
+    public static WebElement select_Status(WebDriver driver) {
+        return driver.findElement(By.xpath("//div[text()='In progress']"));
     }
-    // Save
-    public static WebElement Save1(WebDriver driver) throws NoSuchElementException{
-        element = driver.findElement(By.xpath("//button[text()=' Save']"));
-        return element;
+
+    public static WebElement Save1(WebDriver driver) {
+        return driver.findElement(By.xpath("//button[text()=' Save']"));
     }
 }

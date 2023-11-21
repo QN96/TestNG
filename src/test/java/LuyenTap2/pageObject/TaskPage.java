@@ -4,10 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class TaskPage {
     private static WebElement element = null;
@@ -155,12 +151,4 @@ public class TaskPage {
         element = driver.findElement(By.xpath("//button[text()=' Save']"));
         return element;
     }
-
-//    // Save
-//    public static WebElement Save(WebDriver driver) {
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        WebElement saveButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=' Save']")));
-//        return saveButton;
-//    }
-
 }

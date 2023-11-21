@@ -41,27 +41,24 @@ public class PageActions {
         TaskPage.select_Labels(driver).click();
         TaskPage.start_date(driver).sendKeys(start);
         TaskPage.deadline(driver).sendKeys(deadline);
-        TaskPage.Recurring(driver).click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(TaskPage.Save(driver)));
+        //TaskPage.Recurring(driver).click();
         TaskPage.Save(driver).click();
-        //wait.until(ExpectedConditions.titleContains("Đợi loading"));
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+        wait.until(ExpectedConditions.elementToBeClickable(TaskPage.Save(driver)));
     }
     public static void ListPage(WebDriver driver, String search, String cmt1, String cmt2 ) throws InterruptedException {
+        ListPage.Category(driver).click();
+        Thread.sleep(500);
         ListPage.search(driver).sendKeys(search);
         ListPage.search(driver).sendKeys(Keys.ENTER);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(TaskPage.Save(driver)));
+        Thread.sleep(500);
         ListPage.detail(driver).click();
-        ListPage.cmt1(driver).click();
         ListPage.cmt1(driver).sendKeys(cmt1);
         ListPage.submit_cmt1(driver).click();
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait1.until(ExpectedConditions.elementToBeClickable(TaskPage.Save(driver)));
-        ListPage.cmt2(driver).click();
+        Thread.sleep(500);
         ListPage.cmt2(driver).sendKeys(cmt2);
         ListPage.submit_cmt2(driver).click();
+        Thread.sleep(500);
         ListPage.edit_status(driver).click();
         ListPage.click_Status(driver).click();
         ListPage.select_Status(driver).click();

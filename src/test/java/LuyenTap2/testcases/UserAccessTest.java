@@ -10,6 +10,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 import LuyenTap2.pageObject.*;
 import LuyenTap2.userActions.*;
+@Listeners(TestListener.class)
+
 public class UserAccessTest {
     private static WebDriver driver;
     @BeforeTest

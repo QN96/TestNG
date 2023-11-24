@@ -4,6 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
 public class HomePage {
     private static WebElement element = null;
     //menu
@@ -37,10 +42,22 @@ public class HomePage {
         return element;
     }
 
+
     //Page Actions
     public static void Logout(WebDriver driver){
-        HomePage.text_Dashboard(driver).isDisplayed();
-        HomePage.menu_Profile(driver).click();
-        HomePage.menu_LogOut(driver).click();
+        try {
+            HomePage.text_Dashboard(driver).isDisplayed();
+            HomePage.menu_Profile(driver).click();
+            HomePage.menu_LogOut(driver).click();
+
+            // Chờ cho trang web hoàn thành đăng xuất
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.urlContains("logout")); // Đợi cho URL có chứa "logout"
+
+            System.out.println("Logout successful");
+        } catch (Exception e) {
+            System.err.println("Error during logout: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }

@@ -41,7 +41,7 @@ public class PageActions {
         TaskPage.select_Labels(driver).click();
         TaskPage.start_date(driver).sendKeys(start);
         TaskPage.deadline(driver).sendKeys(deadline);
-        //TaskPage.Recurring(driver).click();
+        TaskPage.Recurring(driver).click();
         TaskPage.Save(driver).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(ExpectedConditions.elementToBeClickable(TaskPage.Save(driver)));

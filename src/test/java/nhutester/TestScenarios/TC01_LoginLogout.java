@@ -1,47 +1,67 @@
 package nhutester.TestScenarios;
 
 import nhutester.commons.TestListener;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import nhutester.Base.BaseSetup;
+import nhutester.pageObject.LoginPage;
+import nhutester.pageObject.HomePage;
+import nhutester.Utilities.PropertiesFile;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
-import nhutester.pageObject.*;
-
-import java.util.concurrent.TimeUnit;
 
 @Listeners(TestListener.class)
-public class TC01_LoginLogout {
-    public static WebDriver driver;
-
-    @Parameters({"browser","appURL"})
-    @BeforeTest
-    public static void loadPage(String browserName, String appURL) {
-        if (browserName.equalsIgnoreCase("chrome")){
-            WebDriverManager.chromedriver().setup();
-            driver=new ChromeDriver();
-
-        } else if (browserName.equalsIgnoreCase("firefox")) {
-            WebDriverManager.chromedriver().setup();
-            driver=new FirefoxDriver();
-        }
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get(appURL);
+public class TC01_LoginLogout extends BaseSetup {
+    private WebDriver driver;
+    private LoginPage loginPage;
+    private HomePage homePage;
+    @BeforeClass
+    public void setUp() {
+        driver = getDriver();
+        PropertiesFile.setPropertiesFile();
     }
 
     @Test (priority = 0)
     public void Test_Login() {
-        LoginPage.Login(driver, "Admin", "admin123");
+        loginPage.Login(driver, PropertiesFile.getPropValue("username"), PropertiesFile.getPropValue("password"));
     }
     @Test (priority = 1)
     public void Test_Logout(){
-        HomePage.Logout(driver);
+        homePage.Logout(driver);
     }
     @AfterTest
-    public void afterTest() {
-        driver.quit();
+    public void afterTest() throws Exception {
+        tearDown();
     }
 }
+
+
+//import nhutester.commons.TestListener;
+//import nhutester.Base.BaseSetup;
+//import nhutester.pageObject.LoginPage;
+//import nhutester.pageObject.HomePage;
+//import org.openqa.selenium.WebDriver;
+//import org.testng.annotations.*;
+//
+//@Listeners(TestListener.class)
+//public class TC01_LoginLogout extends BaseSetup {
+//    private WebDriver driver;
+//    @BeforeClass
+//    public void setUp() {
+//        driver = getDriver();
+//    }
+//    public LoginPage loginPage;
+//    public HomePage homePage;
+//
+//    @Test (priority = 0)
+//    public void Test_Login() {
+//        loginPage.Login(driver, "Admin", "admin123");
+//    }
+//    @Test (priority = 1)
+//    public void Test_Logout(){
+//        homePage.Logout(driver);
+//    }
+//    @AfterTest
+//    public void afterTest() throws Exception {
+//        tearDown();
+//    }
+//}
 

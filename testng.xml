@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestNG" verbose="1">
 <!--    <test thread-count="5" name="FirefoxTest">-->
-<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <parameter name="browserType" value="firefox"></parameter>-->
 <!--        <parameter name="appURL" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"></parameter>-->
 <!--        <classes>-->
 <!--            <class name="nhutester.TestScenarios.TC01_LoginLogout">-->
@@ -9,11 +9,12 @@
 <!--        </classes>-->
 <!--    </test>-->
     <test thread-count="5" name="ChromeTest">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browserType" value="chrome"></parameter>
         <parameter name="appURL" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"></parameter>
         <classes>
-            <class name="nhutester.TestScenarios.TC01_LoginLogout">
+            <class name="nhutester.TestScenarios.excel">
             </class>
         </classes>
     </test>
 </suite>
+

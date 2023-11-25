@@ -1,4 +1,4 @@
-package THContact.Base;
+package BTListTask.Base;
 
 import java.util.concurrent.TimeUnit;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -7,10 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 public class BaseSetup {
     private WebDriver driver;
-
 
     //Hàm này để tùy chọn Browser. Cho chạy trước khi gọi class này (BeforeClass)
     private void setDriver(String browserType, String appURL) {
@@ -76,4 +76,5 @@ public class BaseSetup {
         driver.quit();
     }
 }
+
 

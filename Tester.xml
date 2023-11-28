@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG" verbose="1">
+    <!--    <test thread-count="5" name="FirefoxTest">-->
+    <!--        <parameter name="browserType" value="firefox"></parameter>-->
+    <!--        <parameter name="appURL" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"></parameter>-->
+    <!--        <classes>-->
+    <!--            <class name="nhutester.TestScenarios.TC01_LoginLogout">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+<!--    <test thread-count="5" name="ChromeTest">-->
+<!--        <parameter name="browserType" value="chrome"></parameter>-->
+<!--        <parameter name="appURL" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"></parameter>-->
+<!--        <packages>-->
+<!--            <package name="Tester.TestCases">-->
+<!--            </package>-->
+<!--        </packages>-->
+<!--    </test>-->
+
+    <test thread-count="5" name="ChromeTest">
+        <parameter name="browserType" value="chrome"></parameter>
+        <parameter name="appURL" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"></parameter>
+        <classes>
+            <class name="Tester.TestCases.TC01_LoginLogout_DemoReadFromExcel">
+            </class>
+        </classes>
+    </test>
+</suite>
+

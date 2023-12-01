@@ -1,12 +1,16 @@
 package luyentap2_POM.Actions.pageObject;
 
+import luyentap2_POM.Actions.commons.BasePage;
+import luyentap2_POM.Interfaces.HomePageUI;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import luyentap2_POM.Interfaces.HomePageUI;
 public class HomePage {
     private static WebElement element = null;
-    public static void Home(WebDriver driver) {
-        HomePageUI.avt(driver).click();
-        HomePageUI.logout(driver).click();
+    //menu
+    static BasePage basePage=new BasePage();
+    //Page Actions
+    public static void Logout(WebDriver driver){
+        basePage.clickToElement(driver,HomePageUI.avt);
+        basePage.clickToElement(driver,HomePageUI.logout);
     }
 }

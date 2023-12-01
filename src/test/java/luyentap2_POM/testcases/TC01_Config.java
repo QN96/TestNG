@@ -40,7 +40,7 @@ public class TC01_Config extends BaseTest {
     }
     @Test (priority = 2)
     public void Test_List() throws InterruptedException {
-        ListPage.List(driver,"Bug 1");
+        ListPage.List(driver,"Bug 1", "cmt1","cmt2");
     }
     @AfterClass
     public void afterTest() throws Exception {

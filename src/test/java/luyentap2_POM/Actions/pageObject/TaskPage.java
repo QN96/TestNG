@@ -1,5 +1,6 @@
 package luyentap2_POM.Actions.pageObject;
 
+import luyentap2_POM.Actions.commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import luyentap2_POM.Interfaces.TaskPageUI;
@@ -10,34 +11,33 @@ import java.time.Duration;
 
 public class TaskPage {
     private static WebElement element = null;
+    private static BasePage basePage=new BasePage();
 
     public static void Task(WebDriver driver, String title, String Des, String start, String deadline ) throws InterruptedException {
-        TaskPageUI.click_Tasks(driver).click();
-        TaskPageUI.click_add(driver).click();
-        TaskPageUI.add_title(driver).sendKeys(title);
-        TaskPageUI.add_Description(driver).sendKeys(Des);
-        TaskPageUI.click_Related(driver).click();
-        TaskPageUI.select_Related(driver).click();
+        basePage.clickToElement(driver, TaskPageUI.click_Tasks);
+        basePage.clickToElement(driver, TaskPageUI.click_add);
+        basePage.sendKeyToElement(driver,TaskPageUI.add_title,title);
+        basePage.sendKeyToElement(driver,TaskPageUI.add_Description,Des);
+        basePage.clickToElement(driver, TaskPageUI.click_Related);
+        basePage.clickToElement(driver, TaskPageUI.select_Related);
         Thread.sleep(500);
-        TaskPageUI.click_Contract(driver).click();
-        TaskPageUI.select_Contract(driver).click();
-        TaskPageUI.click_Point(driver).click();
-        TaskPageUI.select_Point(driver).click();
-        TaskPageUI.click_Assign(driver).click();
-        TaskPageUI.select_Assign(driver).click();
-        TaskPageUI.click_Collaborators(driver).click();
-        TaskPageUI.select_Collaborators(driver).click();
-        TaskPageUI.click_Status(driver).click();
-        TaskPageUI.select_Status(driver).click();
-        TaskPageUI.click_Priority(driver).click();
-        TaskPageUI.select_Priority(driver).click();
-        TaskPageUI.click_Labels(driver).click();
-        TaskPageUI.select_Labels(driver).click();
-        TaskPageUI.start_date(driver).sendKeys(start);
-        TaskPageUI.deadline(driver).sendKeys(deadline);
-        TaskPageUI.Recurring(driver).click();
-        TaskPageUI.Save(driver).click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
-        wait.until(ExpectedConditions.elementToBeClickable(LuyenTap2.pageObject.TaskPage.Save(driver)));
+        basePage.clickToElement(driver, TaskPageUI.click_Contract);
+        basePage.clickToElement(driver, TaskPageUI.select_Contract);
+        basePage.clickToElement(driver, TaskPageUI.click_Point);
+        basePage.clickToElement(driver, TaskPageUI.select_Point);
+        basePage.clickToElement(driver, TaskPageUI.click_Assign);
+        basePage.clickToElement(driver, TaskPageUI.select_Assign);
+        basePage.clickToElement(driver, TaskPageUI.click_Collaborators);
+        basePage.clickToElement(driver, TaskPageUI.select_Collaborators);
+        basePage.clickToElement(driver, TaskPageUI.click_Status);
+        basePage.clickToElement(driver, TaskPageUI.select_Status);
+        basePage.clickToElement(driver, TaskPageUI.click_Priority);
+        basePage.clickToElement(driver, TaskPageUI.select_Priority);
+        basePage.clickToElement(driver, TaskPageUI.click_Labels);
+        basePage.clickToElement(driver, TaskPageUI.select_Labels);
+        basePage.sendKeyToElement(driver,TaskPageUI.start_date,start);
+        basePage.sendKeyToElement(driver,TaskPageUI.deadline,deadline);
+        basePage.clickToElement(driver, TaskPageUI.Recurring);
+        basePage.clickToElement(driver, TaskPageUI.Save);
     }
 }

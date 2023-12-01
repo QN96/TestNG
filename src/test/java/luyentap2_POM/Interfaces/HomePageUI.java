@@ -1,33 +1,18 @@
 package luyentap2_POM.Interfaces;
 
-import org.openqa.selenium.*;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class HomePageUI {
     private static WebElement element = null;
+    //menu
     WebDriver driver;
-
-    public HomePageUI(WebDriver driver) {
-        this.driver = driver;
+    public HomePageUI(WebDriver driver){
+        this.driver=driver;
     }
 
     //Web locator
-    static By avt = By.xpath("//a[@id='user-dropdown']");
-    static By logout = By.xpath("//a[text()=' Sign Out']");
-
-    public static WebElement avt(WebDriver driver) throws NoSuchElementException {
-        try {
-            element = driver.findElement(avt);
-        } catch (Exception e) {
-            System.out.println("Exceptions Caught" + e.getMessage());
-        }
-        return element;
-    }
-    public static WebElement logout(WebDriver driver) throws NoSuchElementException {
-        try {
-            element = driver.findElement(logout);
-        } catch (Exception e) {
-            System.out.println("Exceptions Caught" + e.getMessage());
-        }
-        return element;
-    }
+    public static String avt ="//a[@id='user-dropdown']";
+    public static String logout ="//a[text()=' Sign Out']";
 }

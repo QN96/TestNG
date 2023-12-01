@@ -1,119 +1,30 @@
 package luyentap2_POM.Interfaces;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class ListPageUI {
     private static WebElement element = null;
+    //menu
     WebDriver driver;
-    public ListPageUI(WebDriver driver){
-        this.driver=driver;
+
+    public ListPageUI(WebDriver driver) {
+        this.driver = driver;
     }
 
-    //Web locator
-    static By Category = By.xpath("//button[text()='Bug']");
-    static By Search = By.xpath("//input[@type='search']");
-    static By detail = By.xpath("(//td//a[contains(@title, 'Task info')])[1]");
-    static By cmt1 = By.xpath("//textarea[@id='comment_description']");
-    static By submit_cmt1 = By.xpath("//button[text()=' Post Comment']");
-    static By cmt2 = By.xpath("//textarea[@id='comment_description']");
-    static By submit_cmt2 = By.xpath("//button[text()=' Post Comment']");
-    static By edit_status = By.xpath("//a[text()=' Edit task']");
-    static By click_Status = By.xpath("//label[text()='Status']/following::div[@id='s2id_task_status_id']");
-    static By select_Status = By.xpath("//div[text()='In progress']");
-    static By Save1 = By.xpath("//button[text()=' Save']");
-
-    //Text fields
-    public static WebElement Category(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(Category);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-
-    public static WebElement Search(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(Search);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-
-    public static WebElement detail(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(detail);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-
-    public static WebElement cmt1(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(cmt1);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-
-    public static WebElement submit_cmt1(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(submit_cmt1);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-
-    public static WebElement cmt2(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(cmt2);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-    public static WebElement submit_cmt2(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(submit_cmt2);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-    public static WebElement edit_status(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(edit_status);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-    public static WebElement click_Status(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(click_Status);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-    public static WebElement select_Status(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(select_Status);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
-    public static WebElement Save1(WebDriver driver) throws NoSuchElementException{
-        try{
-            element = driver.findElement(Save1);
-        }catch (Exception e){
-            System.out.println("Exceptions Caught"+e.getMessage());
-        }
-        return element;
-    }
+        //Web locator
+        public static String Category = "//button[text()='Bug']";
+        public static String Search = "//input[@type='search']";
+        public static String detail = "(//td//a[contains(@title, 'Task info')])[1]";
+        public static String cmt1 = "//textarea[@id='comment_description']";
+        public static String submit_cmt1 = "//button[text()=' Post Comment']";
+        public static String cmt2 = "//textarea[@id='comment_description']";
+        public static String submit_cmt2 = "//button[text()=' Post Comment']";
+        public static String edit_status = "//a[text()=' Edit task']";
+        public static String click_Status = "//label[text()='Status']/following::div[@id='s2id_task_status_id']";
+        public static String select_Status = "//div[text()='In progress']";
+        public static String Save1 = "//button[text()=' Save']";
 }
+
+
+

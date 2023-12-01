@@ -37,7 +37,7 @@ public class TC01_ReadFromExcel extends BaseTest {
     }
     @Test (priority = 2)
     public void Test_List() throws InterruptedException {
-        ListPage.List(driver,"Bug 2");
+        ListPage.List(driver,"Bug 2", "cm1", "cmt2");
     }
 
     @AfterClass

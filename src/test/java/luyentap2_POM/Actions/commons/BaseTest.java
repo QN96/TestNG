@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
     private static WebDriver driver;
 
-
     //Hàm này để tùy chọn Browser. Cho chạy trước khi gọi class này (BeforeClass)
     private void setDriver(String browserType, String appURL) {
         switch (browserType) {
@@ -33,7 +32,6 @@ public class BaseTest {
     public static WebDriver getDriver() {
         return driver;
     }
-
 
     //Khởi tạo cấu hình của các Browser để đưa vào Switch Case
 
